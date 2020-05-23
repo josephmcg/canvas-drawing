@@ -2,7 +2,7 @@ window.addEventListener("load", () => {
   const clearButton = document.querySelector("#clear");
   const blackButton = document.querySelector("#blackColor");
   const whiteButton = document.querySelector("#whiteColor");
-  const customButton = document.getElementById("custom");
+  const colorPicker = document.querySelector("#colorInput");
   const canvas = document.querySelector("#canvas");
   const ctx = canvas.getContext("2d");
 
@@ -18,7 +18,6 @@ window.addEventListener("load", () => {
     window.addEventListener("resize", drawImageToScale(img, ctx));
   };
 
-  // eventListeners
   canvas.addEventListener("mousedown", startPosition);
   canvas.addEventListener("mouseup", finishedPosition);
   canvas.addEventListener("mousemove", draw);
@@ -48,12 +47,12 @@ window.addEventListener("load", () => {
   clearButton.addEventListener("click", () =>
     clearCanvas(img, ctx, canvas.width, canvas.height)
   );
-  customButton.addEventListener(
-    "click",
-    () => (ctx.strokeStyle = document.getElementById("colorInput").value)
-  );
   blackButton.addEventListener("click", () => (ctx.strokeStyle = "#000000"));
   whiteButton.addEventListener("click", () => (ctx.strokeStyle = "#ffffff"));
+  colorPicker.addEventListener(
+    "change",
+    () => (ctx.strokeStyle = document.getElementById("colorInput").value)
+  );
 });
 
 function drawImageToScale(img, ctx) {

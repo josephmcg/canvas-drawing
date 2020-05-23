@@ -13,19 +13,26 @@
   border: 1px solid black;
 }
 
-#clear {
+button {
   display: inline-block;
   width: 30px;
   height: 30px;
   margin: auto;
   border: 1px solid black;
   font-size: 20px;
+}
+
+#clear {
   color: white;
   background-color: #e3242b;
 }
 
-#clearLabel {
-  margin: 30px;
+#blackColor {
+  background-color: black;
+}
+
+#whiteColor {
+  background-color: white;
 }
 
 .controls {
@@ -34,37 +41,11 @@
   margin: 30px;
 }
 
-#blackColor {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin: auto;
-  border: 1px solid black;
-  font-size: 20px;
-  color: white;
-  background-color: black;
-}
-
-#blackColorLabel {
-  margin: 30px;
-}
-
-#whiteColor {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin: auto;
-  border: 1px solid black;
-  font-size: 20px;
-  color: black;
-  background-color: white;
-}
-
-#whiteColorLabel {
-  margin: 30px;
+label {
+  margin: 15px 30px;
 }
 
 #colorInput {
   text-align: center;
-  margin: 20px auto;
+  margin: 5px auto 20px;
 }
