@@ -2,10 +2,13 @@ window.addEventListener("load", () => {
   const clearButton = document.querySelector("#clear");
   const blackButton = document.querySelector("#blackColor");
   const whiteButton = document.querySelector("#whiteColor");
+  const customButton = document.getElementById("custom");
   const canvas = document.querySelector("#canvas");
   const ctx = canvas.getContext("2d");
 
   const img = new Image();
+
+  // select image path here
   img.src = "./img.jpg";
 
   img.onload = () => {
@@ -20,7 +23,6 @@ window.addEventListener("load", () => {
   canvas.addEventListener("mouseup", finishedPosition);
   canvas.addEventListener("mousemove", draw);
 
-  // variables
   let painting = false;
 
   function startPosition(e) {
@@ -45,6 +47,10 @@ window.addEventListener("load", () => {
 
   clearButton.addEventListener("click", () =>
     clearCanvas(img, ctx, canvas.width, canvas.height)
+  );
+  customButton.addEventListener(
+    "click",
+    () => (ctx.strokeStyle = document.getElementById("colorInput").value)
   );
   blackButton.addEventListener("click", () => (ctx.strokeStyle = "#000000"));
   whiteButton.addEventListener("click", () => (ctx.strokeStyle = "#ffffff"));

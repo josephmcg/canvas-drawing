@@ -63,3 +63,8 @@
 #whiteColorLabel {
   margin: 30px;
 }
+
+#colorInput {
+  text-align: center;
+  margin: 20px auto;
+}
